@@ -5,15 +5,15 @@ import logo from "../../assets/Group 565.png";
 const Home = () => {
   return (
     <div
-      className="relative w-full h-screen bg-cover bg-center flex items-center justify-center"
+      className="relative w-full h-screen bg-cover bg-center flex items-center justify-center mr-80  "
       style={{
         backgroundImage: `url(${avatarImg})`,
-        backgroundSize: "60%",
+        backgroundSize: "70%",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center", 
       }}
     >
-      <div className="absolute inset-0 flex flex-col md:flex-row items-start justify-end p-6 md:p-20">
+      <div className="absolute inset-0 flex flex-col md:flex-row items-start justify-end p-6 md:p-20 ">
         <img
           src={logo}
           alt="Round Rock Logo"

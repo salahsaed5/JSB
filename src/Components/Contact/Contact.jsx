@@ -12,7 +12,7 @@ const Contact = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch("hhttp://upskilling-egypt.com:3001/contact", {
+      const response = await fetch("http://upskilling-egypt.com:3001/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -24,12 +24,15 @@ const Contact = () => {
         throw new Error("Something went wrong");
       }
 
-      const result = await response.json();
+      const result = await response.json().catch(() => {
+        throw new Error("Invalid JSON response");
+      });
+
       console.log(result);
       toast.success("تم إرسال النموذج بنجاح");
     } catch (error) {
-      console.error(error);
-      toast.error("حدث خطأ أثناء إرسال البيانات");
+      console.error("Error:", error.message);
+      toast.error(`حدث خطأ: ${error.message}`);
     }
   };
 
